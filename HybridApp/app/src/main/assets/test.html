@@ -1,0 +1,42 @@
+<html>
+<head>
+
+<script language="JavaScript">
+
+function setMessage(arg) { 
+	document.getElementById('textMessageFromApp').innerHTML = arg;
+}
+
+function sendMessage(msg){
+	window.HybridApp.setMessage(document.getElementById('txtName').value);
+}
+</script>
+<SCRIPT>
+
+function callAndroidApk(){
+ window.HybridApp.test();
+ //window.HybridApp.testParams("전달될 값");
+}
+
+</SCRIPT>
+
+
+</head>
+
+<body>
+<h2>Hybrid App (WEB+APP)</h2>
+<hr/>
+<form action="/aaa/myDo" name="aform">
+<input type="text" id="txtName" value="Hello, Hybrid(WEB)!!"/>
+<input type="button" value="Send Message" onclick="sendMessage()"/>
+</form>
+<hr/>
+<br>
+<a href="javascript:callAndroidApk();">Click here</a> <br> <br> <br>
+<a href="tel:01037926917">010-3792-6917</a> <br><br><br>
+
+Message From App<br><br>
+<p id="textMessageFromApp" >
+</p>
+</body>
+</html>
